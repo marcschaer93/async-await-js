@@ -6,6 +6,7 @@ async function part1() {
     let data = await $.getJSON(`${baseURL}/${favNumber}/?json`)
     console.log('DATA', data);
 }
+
 part1()
 
 
@@ -15,6 +16,7 @@ async function part2() {
     let facts = await $.getJSON(`${baseURL}/${favNumbers}/?json`)
     console.log('facts', facts);
 }
+
 part2()
 
 
@@ -27,6 +29,7 @@ async function part3() {
         $("#list-facts").append(`<li>${fact.text}</li>`)
     });
 };
+
 part3()
 
 

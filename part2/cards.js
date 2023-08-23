@@ -1,20 +1,20 @@
 let BASE_URL = "https://deckofcardsapi.com/api"
 
 // 1
-
 async function part1() {
     let response = await $.getJSON(`${BASE_URL}/deck/new/draw/`)
     console.log(response);
     let {value, suit} = response.cards[0]
     console.log(`${value} of ${suit}`);
 }
+
 part1()
 
-// 2
 
-let card1 = null
+// 2
+// let card1 = null
 async function part2() {
-    card1 = await $.getJSON(`${BASE_URL}/deck/new/draw/`)
+    let card1 = await $.getJSON(`${BASE_URL}/deck/new/draw/`)
     deckId = card1.deck_id
     console.log(deckId);
     let card2 = await $.getJSON(`${BASE_URL}/deck/${deckId}/draw/`)
@@ -24,6 +24,7 @@ async function part2() {
     }
     )
 }
+
 part2()
 
 
@@ -47,6 +48,7 @@ async function part3() {
         if (cardData.remaining === 0) $("#btn").remove();
     })
 }
+
 part3()
 
 
